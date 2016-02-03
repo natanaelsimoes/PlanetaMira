@@ -1,0 +1,50 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">Planeta Mira - Brigada Gurren Lagan</a>
+        </div>        
+    </div>
+</nav>
+
+<div class="container">    
+    <h3>Seu Nintendo Network ID é: <b id="meunnd"></b></h3>    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Para adicionar</h3>
+        </div>
+        <div class="panel-body">
+            <p>Você ainda não adicionou essas pessoas na sua lista de amigos</p>
+            <ul class="list-group" id="adicionar">                
+            </ul>
+        </div>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">Amigos adicionados</h3>
+        </div>
+        <div class="panel-body">            
+            <ul class="list-group" id="adicionados">                
+            </ul>
+        </div>
+    </div>        
+</div>
+<script>
+    $(function () {
+        $('#meunnd').html($('body').attr('data-user'));
+        $('#adicionar').load('php/amigos_adicionar.php', 'nnid=' + $('body').attr('data-user'));
+        $('#adicionados').load('php/amigos_adicionados.php', 'nnid=' + $('body').attr('data-user'));
+    });
+
+    function adicionar(dom, nnid) {
+        $.ajax({url: 'php/adicionar.php', data: 'nnid=' + $('body').attr('data-user') + '&a_nnid=' + nnid});
+        p = $(dom).parent();
+        $(dom).remove();
+        $('#adicionados').prepend(p);
+    }
+</script>

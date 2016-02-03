@@ -1,0 +1,26 @@
+Time : 05:32:03
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : SELECT j.nnid FROM jogador j LEFT JOIN amigo a ON a.a_nnid = j.nnid AND a.nnid = :nnid WHERE j.nnid <> :nnid
+
+Time : 05:32:02
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : SELECT j.nnid FROM jogador j LEFT JOIN amigo a ON a.a_nnid = j.nnid AND a.nnid = :nnid WHERE j.nnid <> :nnid
+
+Time : 05:31:26
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : SELECT j.nnid FROM jogador j LEFT JOIN amigo a ON a.a_nnid = j.nnid AND a.nnid = :nnid WHERE j.nnid <> :nnid
+
+Time : 05:30:37
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : REPLACE INTO jogador (nnid) VALUES (:nnid)
+
+Time : 05:29:58
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OR INSERT INTO jogador (nnid) VALUES (?)' at line 1
+Raw SQL : UPDATE OR INSERT INTO jogador (nnid) VALUES (:nnid)
+
+Time : 05:28:32
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OR INSERT INTO jogador (nnid) VALUES (?)' at line 1
+Raw SQL : UPDATE OR INSERT INTO jogador (nnid) VALUES (:nnid)
+
+Time : 05:22:54
+SQLSTATE[HY000] [1049] Unknown database 'mira'
